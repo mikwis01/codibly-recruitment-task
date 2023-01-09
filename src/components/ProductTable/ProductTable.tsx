@@ -12,9 +12,9 @@ type Product = {
 
 export const ProductTable = () => {
   const [searchParams] = useSearchParams()
-  console.log(searchParams.get("page"))
+  const currentPage = searchParams.get("page") === null ? 1 : Number(searchParams.get("page"))
 
-  const { data } = useGetProducts(Number(searchParams.get("page")))
+  const { data } = useGetProducts(currentPage)
 
   return (
     <div className="w-5/6 py-8 text-white bg-graySemiDark flex flex-col justify-center items-center gap-5 max-w-lg mt-5 rounded-lg">
@@ -29,7 +29,7 @@ export const ProductTable = () => {
           ))}
         </tbody>
       </table>
-      <Pagination />
+      <Pagination totalPages={data?.total_pages} />
     </div>
   )
 }
