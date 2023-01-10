@@ -1,4 +1,4 @@
-import { inputRegex } from "./components/Search/inputRegex"
+import { inputRegex } from "./inputRegex"
 import { describe, expect, it } from "vitest"
 
 describe("Search bar", () => {
