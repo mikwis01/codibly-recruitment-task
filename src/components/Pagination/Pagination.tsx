@@ -7,8 +7,6 @@ type Props = {
 export const Pagination = ({ totalPages }: Props) => {
   const [searchParams] = useSearchParams()
   const currentPage = searchParams.get("page") === null ? 1 : Number(searchParams.get("page"))
-  console.log(currentPage)
-  console.log(totalPages)
 
   return (
     <div className="w-5/6 h-10 max-w-xs flex items-center justify-between">

@@ -1,11 +1,15 @@
 import { ChangeEvent, useState } from "react"
 import { FaSearch } from "react-icons/fa"
+import { Link, useSearchParams } from "react-router-dom"
+import { inputRegex } from "./inputRegex"
 
 export const Search = () => {
   const [input, setInput] = useState("")
+  const [searchParams] = useSearchParams()
+  const currentPage = searchParams.get("page") === null ? 1 : Number(searchParams.get("page"))
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const result = event.target.value.replace(/[^0-9]/g, "")
+    const result = inputRegex(event.target.value)
 
     setInput(result)
   }
@@ -20,9 +24,11 @@ export const Search = () => {
           onChange={handleInputChange}
           value={input}
         />
-        <button className="w-10 h-8 grid place-items-center bg-emerald-700 border border-emerald-700 -ml-[1px] rounded-br rounded-tr">
-          <FaSearch />
-        </button>
+        <Link to={`/?page=${currentPage}${input !== "" ? `&id=${input}` : ""}`}>
+          <button className="w-10 h-8 grid place-items-center bg-emerald-700 border border-emerald-700 -ml-[1px] rounded-br rounded-tr">
+            <FaSearch />
+          </button>
+        </Link>
       </div>
     </div>
   )
