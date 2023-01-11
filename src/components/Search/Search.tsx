@@ -1,18 +1,9 @@
-import { ChangeEvent, useState } from "react"
 import { FaSearch } from "react-icons/fa"
-import { Link, useSearchParams } from "react-router-dom"
-import { inputRegex } from "./inputRegex"
+import { Link } from "react-router-dom"
+import { useSearch } from "./useSearch"
 
 export const Search = () => {
-  const [input, setInput] = useState("")
-  const [searchParams] = useSearchParams()
-  const currentPage = searchParams.get("page") === null ? 1 : Number(searchParams.get("page"))
-
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const result = inputRegex(event.target.value)
-
-    setInput(result)
-  }
+  const { input, currentPage, handleInputChange } = useSearch()
 
   return (
     <div className="w-5/6 h-24 text-white bg-graySemiDark flex flex-col justify-center items-center gap-2 max-w-lg mt-5 rounded-lg">

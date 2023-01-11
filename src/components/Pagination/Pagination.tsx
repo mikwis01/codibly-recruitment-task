@@ -14,7 +14,7 @@ export const Pagination = ({ totalPages }: Props) => {
   return (
     <div className="w-5/6 h-10 max-w-xs flex items-center justify-between">
       <button
-        className={`bg-emerald-700 rounded-md h-full w-20 disabled:opacity-50`}
+        className={`bg-emerald-700 rounded-md h-full w-20 disabled:opacity-50 hover:scale-110 transition-all disabled:hover:scale-100`}
         disabled={prevAv}>
         <Link
           to={`?page=${currentPage - 1}`}
@@ -25,7 +25,7 @@ export const Pagination = ({ totalPages }: Props) => {
         </Link>
       </button>
       <button
-        className={`bg-emerald-700 rounded-md h-full w-20 disabled:opacity-50`}
+        className={`bg-emerald-700 rounded-md h-full w-20 disabled:opacity-50 hover:scale-110 transition-all disabled:hover:scale-100`}
         disabled={nextAv}>
         <Link
           to={`?page=${currentPage + 1}`}

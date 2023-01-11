@@ -2,7 +2,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import ReactDOM from "react-dom/client"
-import App from "./App"
+import { App } from "./App"
 import "./index.css"
 import { ContextProvider } from "./context/AppContext"
 
