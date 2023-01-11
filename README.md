@@ -22,6 +22,8 @@ A project made for recruitment process purposses
 - zod
 - tanstack/react-query
 - react-error-boundary
+- vitest
+- cypress
 
 ## Challanges
 
