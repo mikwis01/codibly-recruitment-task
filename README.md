@@ -27,6 +27,6 @@ A project made for recruitment process purposses
 
 The greatest challange was to reflect filtering and pagination in the URL address - however after reading react-router-dom docs I managed to solve the problem.
 
-## What am i proud of?
+## What am i proud of
 
 I am satisfied with using zod for taking care of proper data validation and also handling errors with react-error-boundary.
